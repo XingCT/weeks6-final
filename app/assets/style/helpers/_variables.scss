@@ -67,14 +67,14 @@ $colors: (
 // scss-docs-end colors-map
 
 // scss-docs-start theme-color-variables
-$primary:       #00cc99; // $blue !default;
-$secondary:     $gray-600 !default;
+$primary:       #630834; // $blue !default;
+$secondary:     #E31277 !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-900 !default;
+$light:         #EFEFEF !default;
+$dark:          #707070 !default;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -86,7 +86,10 @@ $theme-colors: (
   "warning":    $warning,
   "danger":     $danger,
   "light":      $light,
-  "dark":       $dark
+  "dark":       $dark,
+
+  "black":      #000000,
+  "white":      #ffffff,
 ) !default;
 // scss-docs-end theme-colors-map
 
@@ -250,11 +253,14 @@ $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
 $spacer: 1rem !default;
 $spacers: (
   0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
+  1: $spacer * .25, // 4 px
+  2: $spacer * .5, // 8 px 
+  3: $spacer, // 16 px 
+  4: $spacer * 1.5, // 24 px
+  5: $spacer * 3, // 48 px  
+  
+  6: $spacer * 0.625, // 10 px 
+  7: $spacer * 2, // 32 px
 ) !default;
 
 $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) !default;
@@ -286,7 +292,7 @@ $body-text-align:           null !default;
 // Style anchor elements.
 
 $link-color:                              $primary !default;
-$link-decoration:                         underline !default;
+$link-decoration:                         none !default;
 $link-shade-percentage:                   20% !default;
 $link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
 $link-hover-decoration:                   null !default;
@@ -343,7 +349,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 $grid-columns:                12 !default;
-$grid-gutter-width:           1.5rem !default;
+$grid-gutter-width:           1.875rem !default;
 $grid-row-columns:            6 !default;
 
 $gutters: $spacers !default;
@@ -441,12 +447,14 @@ $line-height-base:            1.5 !default;
 $line-height-sm:              1.25 !default;
 $line-height-lg:              2 !default;
 
-$h1-font-size:                $font-size-base * 2.5 !default;
-$h2-font-size:                $font-size-base * 2 !default;
-$h3-font-size:                $font-size-base * 1.75 !default;
-$h4-font-size:                $font-size-base * 1.5 !default;
-$h5-font-size:                $font-size-base * 1.25 !default;
+$h1-font-size:                $font-size-base * 2.5 !default; // 40 px
+$h2-font-size:                $font-size-base * 2 !default; // 32 px
+$h3-font-size:                $font-size-base * 1.75 !default; // 28 px
+$h4-font-size:                $font-size-base * 1.5 !default; // 24 px
+$h5-font-size:                $font-size-base * 1.25 !default; // 20 px
 $h6-font-size:                $font-size-base !default;
+
+$h7-font-size:                $font-size-base * 1.375 !default; //  22 px
 // scss-docs-end font-variables
 
 // scss-docs-start font-sizes
@@ -456,7 +464,9 @@ $font-sizes: (
   3: $h3-font-size,
   4: $h4-font-size,
   5: $h5-font-size,
-  6: $h6-font-size
+  6: $h6-font-size,
+
+  7: $h7-font-size,
 ) !default;
 // scss-docs-end font-sizes
 

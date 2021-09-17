@@ -6,54 +6,251 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><%- title %></title>
+    <!-- ? font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <!-- ? google icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- ? swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- ? bootstrap -->
     <link rel="stylesheet" href="./assets/style/bootstrap.css">
+    
     <link rel="stylesheet" href="./assets/style/all.css">
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+    <!-- ? navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-white border border-dark" style="z-index:1090;">
+      <div class="container">
+        <!-- ? 漢堡選單 -->
+        <button class="navbar-toggler bg-secondary d-lg-none" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon "></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+        <!-- ? sign & icon(隱藏) -->
+        <div class="d-flex d-none d-lg-flex invisible">
+          <a href="#" class="link-dark d-none d-lg-block mx-3">Sign in</a>
+          <a href="#" class="link-dark d-none d-lg-block mx-3">Sign up</a>
+          <a href="#" class="position-relative me-6 m-lg-0" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <span class="material-icons link-black">confirmation_number</span>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">3</span>
+          </a>
+        </div>
+        <!-- ? logo -->
+        <a class="fs-4 m-0 navbar-brand text-primary" href="#">EXHIBINECTION</a>
+        <!-- ? sign & icon -->
+        <div class="d-flex ps-4 p-lg-0">
+          <a href="#" class="link-dark d-none d-lg-block mx-3">Sign in</a>
+          <a href="#" class="link-dark d-none d-lg-block mx-3">Sign up</a>
+          <a href="#" class="position-relative me-2 m-lg-0" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <span class="material-icons link-black">confirmation_number</span>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">3</span>
+          </a>
         </div>
       </div>
     </nav>
+    <!-- ? 折疊效果 -->
+    <div class="collapse navbar-collapse bg-secondary" id="navbarToggleExternalContent">
+      <ul class="navbar-nav container p-4">
+        <li class="nav-item pb-4">
+          <a class="text-white" href="#">Sign in</a>
+        </li>
+        <li class="nav-item">
+          <a class="text-white" href="#">Sign up</a>
+        </li>
+      </ul>
+    </div>
+    <!-- ? 彈跳視窗(icon) -->
+    <div class="modal right fade modal-dialog modal-dialog-scrollable" id="staticBackdrop" data-bs-backdrop="static"
+      data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Cart List</h5>
+          </div>
+
+          <div class="modal-body">
+
+            <div class="card mb-3" style="max-width: 540px;">
+              <button type="button" class="btn-close" aria-label="Close"></button>
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="./assets/images/max-van-den-oetelaar-IMYe9uYN27E-unsplash.jpeg"
+                    class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">2020 台味設計展</h5>
+                    <h5 class="card-title">01 JUN — 31 OCT</h5>
+                    <div class="d-flex justify-content-between">
+                      <p>全票</p>
+                      <div class="d-flex align-items-center">
+                        <a href="#"><span class="material-icons">remove</span></a>
+                        01
+                        <a href="#"><span class="material-icons">add</span></a>
+                      </div>
+                    </div>
+                    <h4>NT$350</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-3" style="max-width: 540px;">
+              <button type="button" class="btn-close" aria-label="Close"></button>
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="./assets/images/michel-catalisano--a0D9LpcKV8-unsplash.jpeg" class="img-fluid rounded-start"
+                    alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">2020 台味設計展</h5>
+                    <h5 class="card-title">01 JUN — 31 OCT</h5>
+                    <div class="d-flex justify-content-between">
+                      <p>全票</p>
+                      <div class="d-flex align-items-center">
+                        <span class="material-icons">remove</span>
+                        01
+                        <span class="material-icons">add</span>
+                      </div>
+                    </div>
+                    <h4>NT$350</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mb-3" style="max-width: 540px;">
+              <button type="button" class="btn-close" aria-label="Close"></button>
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="./assets/images/moralis-tsai-8xsktFRw28I-unsplash.jpeg" class="img-fluid rounded-start"
+                    alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">2020 台味設計展</h5>
+                    <h5 class="card-title">01 JUN — 31 OCT</h5>
+                    <div class="d-flex justify-content-between">
+                      <p>全票</p>
+                      <div class="d-flex align-items-center">
+                        <span class="material-icons">remove</span>
+                        01
+                        <span class="material-icons">add</span>
+                      </div>
+                    </div>
+                    <h4>NT$350</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="modal-footer d-flex justify-content-between">
+            <div class="d-flex">
+              <p>小計</p>
+              <p>NT$1050</p>
+            </div>
+            <button type="button" class="btn btn-primary">前往結帳</button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
 
     <%- contents %>
 
+    <div class="swiper-container mySwiper">
+      <div class="swiper-wrapper"></div>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="./assets/images/ricardo-gomez-angel-WxpnuLzqZN4-unsplash.jpeg" class="card-img-top rounded-0" alt="..." style="height: 350px; object-fit: cover;">
+          Slide 1
+        </div>
+        <div class="swiper-slide">
+          <img src="./assets/images/petri-heiskanen-bR9gFJqAnzA-unsplash.jpeg" class="card-img-top rounded-0" alt="..." style="height: 350px; object-fit: cover;">
+          Slide 2</div>
+        <div class="swiper-slide">
+          <img src="./assets/images/museums-victoria-kiDwVL_5ZBY-unsplash (1).jpeg" class="card-img-top rounded-0" alt="..." style="height: 350px; object-fit: cover;">Slide 3</div>
+          <div class="swiper-slide">
+            <img src="./assets/images/ricardo-gomez-angel-WxpnuLzqZN4-unsplash.jpeg" class="card-img-top rounded-0" alt="..." style="height: 350px; object-fit: cover;">Slide 1</div>
+          <div class="swiper-slide">
+            <img src="./assets/images/petri-heiskanen-bR9gFJqAnzA-unsplash.jpeg" class="card-img-top rounded-0" alt="..." style="height: 350px; object-fit: cover;">Slide 2</div>
+          <div class="swiper-slide">
+            <img src="./assets/images/museums-victoria-kiDwVL_5ZBY-unsplash (1).jpeg" class="card-img-top rounded-0" alt="..." style="height: 350px; object-fit: cover;">Slide 3</div>
+      </div>
+    </div>
+
+
+
+
     <footer class="footer">
-      footer
+      <div class="container my-4">
+        <h2 class="lh-base">猜你也喜歡...</h2>
+        <div class="row d-flex flex-column flex-md-row">
+    
+          <div class="card border-0 col-1 d-none d-md-block"></div>
+    
+          <div class="card border-0 col-12 col-md-4">
+            <img src="./assets/images/ricardo-gomez-angel-WxpnuLzqZN4-unsplash.jpeg" class="card-img-top rounded-0"
+              alt="..." style="height: 350px; object-fit: cover;">
+            <div class="card-body p-0 mt-2 mb-3">
+              <p class="card-text fs-5 mb-1 fw-bold">No.22 線上設計展</p>
+              <p class="card-text fs-5">$350</p>
+            </div>
+          </div>
+    
+          <div class="card border-0 col-12 col-md-4">
+            <img src="./assets/images/petri-heiskanen-bR9gFJqAnzA-unsplash.jpeg" class="card-img-top rounded-0" alt="..."
+              style="height: 350px; object-fit: cover;">
+            <div class="card-body p-0 mt-2 mb-3">
+              <p class="card-text fs-5 mb-1 fw-bold">No.22 線上設計展</p>
+              <p class="card-text fs-5">$350</p>
+            </div>
+          </div>
+    
+          <div class="card border-0 col-12 col-md-3">
+            <img src="./assets/images/museums-victoria-kiDwVL_5ZBY-unsplash (1).jpeg" class="card-img-top rounded-0"
+              alt="..." style="height: 350px; object-fit: cover;">
+            <div class="card-body p-0 mt-2 mb-3">
+              <p class="card-text fs-5 mb-1 fw-bold">No.22 線上設計展</p>
+              <p class="card-text fs-5">$350</p>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    
+      <div class="bgGirl">
+        <div class="container d-flex flex-column justify-content-end pb-10" style="height: 400px;">
+          <h2 class="lh-base text-white">想收到展覽的最新消息嗎？<br>快訂閱我們！</h2>
+          <div class="input-group mb-5">
+            <input type="text" class="form-control" placeholder="輸入您的電子信箱" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-secondary" type="button" id="button-addon2">訂閱</button>
+          </div>
+        </div>
+      </div>
+    
+      <div class="container d-flex  py-3 flex-md-row justify-content-md-between">
+        <div class="d-flex flex-column flex-md-row">
+          <h4 class="m-0 fs-7 lh-1">EXHIBINECTION</h4>
+          <p class="m-0 ms-md-3">© 2020. All Rights Reserved.</p>
+        </div>
+    
+        <div class="d-flex d-none d-md-flex">
+          <a href="#" class="text-decoration-none link-gary d-none d-md-block">Sign in</a>
+          <a href="#" class="text-decoration-none ms-7 link-gary d-none d-md-block ms-3">Sign up</a>
+        </div>
+      </div>
     </footer>
+    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script src="./assets/js/vendors.js"></script>
     <script src="./assets/js/all.js"></script>
